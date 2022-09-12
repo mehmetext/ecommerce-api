@@ -9,6 +9,12 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $casts = array(
+        "discount" => "integer",
+        "stock" => "integer",
+        "price" => "integer",
+    );
+
     public function reviews()
     {
         return $this->hasMany(Review::class);

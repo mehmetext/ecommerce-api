@@ -9,6 +9,11 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $casts = array(
+        "product_id" => "integer",
+        "star" => "integer",
+    );
+
     public function product()
     {
         return $this->belongsTo(Product::class);
